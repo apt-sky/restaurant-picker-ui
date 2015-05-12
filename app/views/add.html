@@ -1,0 +1,22 @@
+<div class="row marketing">
+
+    <form name="mainForm" class="col-md-12">
+        <div class="form-group">
+            <label for="restaurantNameInput">Restaurant Name</label>
+            <input name="restaurantNameInput" type="text" class="form-control" ng-model="restaurantInfoModel.name" id="restaurantNameInput"
+                   placeholder="Enter Restaurant Name" ng-minlength="1" required>
+        </div>
+    </form>
+
+
+    <div class="text-center">
+        <button type="button" class="btn btn-primary" ng-click="addRestaurant()" center>
+            Add Restaurant
+        </button>
+    </div>
+
+    <div class="text-center" ng-controller="MainCtrl">
+        <label data-ng-model="result">{{result}}</label>
+    </div>
+
+</div>
