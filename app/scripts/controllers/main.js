@@ -8,11 +8,11 @@
  * Controller of the restaurantPickerUiApp
  */
 angular.module('restaurantPickerUiApp')
-    .controller('MainCtrl', function ($scope, $http) {
+    .controller('MainCtrl', function ($scope, $http, appConfig) {
 
-        var restaurantServiceUrl = 'http://0.0.0.0:3000/restaurants/';
+        var restaurantServiceUrl = appConfig.url;
 
-        $scope.randomRestaurant;
+        $scope.randomRestaurant = {};
         $scope.allRestaurants;
 
         $scope.randomize = function () {
