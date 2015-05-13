@@ -7,6 +7,6 @@ ADD ./server.js /src/
 
 ENV NODE_ENV=aws
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD node /src/server.js
