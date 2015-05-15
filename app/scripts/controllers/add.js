@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('restaurantPickerUiApp')
-    .controller('AddCtrl', function ($scope, $http) {
+    .controller('AddCtrl', function ($scope, $http, appConfig) {
 
-        var restaurantServiceUrl = 'http://0.0.0.0:3000/restaurants/';
+        var restaurantServiceUrl = appConfig.url;
 
         $scope.restaurantInfoModel = {};
         var restaurant = {
@@ -15,16 +15,19 @@ angular.module('restaurantPickerUiApp')
 
         $scope.addRestaurant = function () {
 
-            restaurant._id = $scope.restaurantInfoModel.name.replace(/\s+/g, '');
+            restaurant._id = $scope.restaurantInfoModel.name.replace(/\s+/g, '').replace(/[^\w\s]/gi, '').toLowerCase();
             restaurant.name = $scope.restaurantInfoModel.name;
+
+            console.log('Adding restaurant with id: ' + restaurant._id + ' and name: ' + restaurant.name);
 
             $http({method: 'POST', url: restaurantServiceUrl, data: restaurant, withCredentials: false})
                 .success(function () {
-                    console.log('Successfully added Restaurant: ' + restaurant);
+                    console.log('Successfully added Restaurant: ');
+                    console.log(restaurant);
                     $scope.result = 'Success! :)';
                 })
                 .error(function (error) {
-                    console.log('Error adding Restaurant: ' + restaurant + 'with error: ' + error);
+                    console.log('Error adding Restaurant id: %s and name: %s with error: %j', restaurant._id, restaurant.name, error);
                     $scope.result = 'Failure :(';
                 });
         };
