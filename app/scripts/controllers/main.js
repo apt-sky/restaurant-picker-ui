@@ -12,7 +12,7 @@ angular.module('restaurantPickerUiApp')
 
         var restaurantServiceUrl = appConfig.url;
 
-        $scope.randomRestaurant = {};
+        //$scope.randomRestaurant = {};
         $scope.allRestaurants;
 
         $scope.randomize = function () {
