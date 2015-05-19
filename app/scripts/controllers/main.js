@@ -8,8 +8,9 @@
  * Controller of the restaurantPickerUiApp
  */
 angular.module('restaurantPickerUiApp')
-    .controller('MainCtrl', function ($scope, $http, appConfig) {
+    .controller('MainCtrl', function ($scope, $http, appConfig, $rootScope) {
 
+        $rootScope.currentTab = 'home';
         var restaurantServiceUrl = appConfig.url;
 
         $scope.allRestaurants;

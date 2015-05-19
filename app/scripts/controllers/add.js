@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('restaurantPickerUiApp')
-    .controller('AddCtrl', function ($scope, $http, appConfig) {
+    .controller('AddCtrl', function ($scope, $http, appConfig, $rootScope) {
 
+        $rootScope.currentTab = 'add';
         var restaurantServiceUrl = appConfig.url;
 
         $scope.restaurantInfoModel = {};
