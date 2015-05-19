@@ -1,0 +1,17 @@
+<div class="row marketing" ng-controller="AllCtrl">
+
+    <div class="text-center">
+        <button type="button" class="btn btn-primary" ng-click="getAllRestaurants()" center>
+            Get All Restaurants
+        </button>
+    </div>
+
+    <br>
+
+    <div class="text-center">
+        <div ng-repeat="restaurant in restaurants">
+            <p>{{restaurant.name}}</p>
+        </div>
+    </div>
+
+</div>
