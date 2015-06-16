@@ -16,5 +16,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "restaurantPickerUiApp"
+  "moduleName": "restaurantPickerUiApp",
+  "resolutions": {
+    "angular": "1.4.1"
+  }
 }
